@@ -2,6 +2,14 @@ const router = require('express').Router();
 
 const Users = require('../users/users-model.js');
 
+router.post('/hash', (req, res) => {
+  // read a password from the body
+  req.body
+  // hash the password using bcryptjs
+  // return it to the user in an object that looks like
+  // { password: 'original passsword', hash: 'hashed password' }
+})
+
 router.post('/register', (req, res) => {
   let user = req.body;
 
@@ -30,5 +38,6 @@ router.post('/login', (req, res) => {
       res.status(500).json(error);
     });
 });
+
 
 module.exports = router;
